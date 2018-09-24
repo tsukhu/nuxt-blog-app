@@ -57,10 +57,14 @@ module.exports = {
   },
 
   env: {
-    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-4cc02.firebaseio.com'
+    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-4cc02.firebaseio.com',
+    fbAPIKey: 'AIzaSyDI9M9SgyLIj0m4xTyDtj-AFJoUpeATGIA'
   },
   transition: {
     name: 'fade',
     mode: 'out-in'
+  },
+  router: {
+    middleware: 'log'
   }
 };
