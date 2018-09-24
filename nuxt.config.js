@@ -41,7 +41,7 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
-  modules: ['@nuxtjs/axios'],
+  modules: ['@nuxtjs/dotenv', '@nuxtjs/axios'],
 
   axios: {
     baseURL: process.env.BASE_URL || 'https://nuxt-blog-4cc02.firebaseio.com'
@@ -59,7 +59,7 @@ module.exports = {
 
   env: {
     baseUrl: process.env.BASE_URL || 'https://nuxt-blog-4cc02.firebaseio.com',
-    fbAPIKey: 'AIzaSyDI9M9SgyLIj0m4xTyDtj-AFJoUpeATGIA'
+    fbAPIKey: process.env.FIREBASE_API_KEY
   },
   transition: {
     name: 'fade',

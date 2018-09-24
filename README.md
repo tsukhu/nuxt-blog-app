@@ -4,7 +4,11 @@
 
 ## Build Setup
 
-``` bash
+Create a .env file and added the firebase API key
+
+FIREBASE_API_KEY=
+
+```bash
 # install dependencies
 $ yarn install
 
