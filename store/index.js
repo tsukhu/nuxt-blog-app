@@ -139,11 +139,18 @@ const createStore = () => {
         }
         if (new Date().getTime() > +expirationDate || !token) {
           console.log('No token or invalid token');
-          vuexContext.commit('clearToken');
+          vuexContext.dispatch('logout');
           return;
         }
         console.log('token=' + token);
         vuexContext.commit('setToken', token);
+      },
+      logout(vuexContext) {
+        vuexContext.commit('clearToken');
+        Cookie.remove('jwt');
+        Cookie.remove('expirationDate');
+        localStorage.removeItem('token');
+        localStorage.removeItem('tokenExpiration');
       }
     },
     getters: {
